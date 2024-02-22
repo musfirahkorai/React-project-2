@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color:yellow;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow-y: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: yellow;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 23px;
+}
+
+.logo {
+  font-size: 2rem; /* Increased the font size to 2rem */
+  color: blue;
+  text-align: left;
+}
+
+/* Add the desired stable font to your text, for example: */
+nav a {
+  font-family: 'StableFont', sans-serif; /* Replace 'StableFont' with your desired font for navigation links */
+}
+
+/* Add a separate font for the .logo text if needed: */
+.logo {
+  font-family: 'BigFont', sans-serif; /* Replace 'BiggerFont' with your desired font for the logo */
+}
+/* Existing CSS code */
+
+nav a {
+  text-decoration: none;
+  color: blue;
+  position: relative; /* Add this line to establish a positioning context for the pseudo-element */
+  font-family: 'Lato', sans-serif; /* Use the desired font-family name here */
+}
+
+nav a::before {
+  content: ''; /* Create an empty content box */
+  position: absolute; /* Position the pseudo-element */
+  width: 100%; /* Full width of the link */
+  height: 2px; /* Height of the underline */
+  bottom: 0; /* Position it at the bottom of the link */
+  background-color: yellow; /* Color of the underline */
+  transform: scaleX(0); /* Initially, set the width to 0 */
+  transform-origin: 0 0; /* Origin at the left */
+  transition: transform 0.3s; /* Add a smooth transition effect */
+}
+
+nav a:hover::before {
+  transform: scaleX(1); /* Expand the underline to full width on hover */
+}
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  font-family: cursive;
+  background-color: yellow; /* Background color for the section */
+}
+h2{
+  color: black;
+}
+/* Style the left content in the section */
+.left {
+  flex: 1;
+  padding: 20px;
+}
+
+.left p {
+  font-size: x-large;
+  margin: 10px 0;
+  color: navy;
+  font-family: cursive;
+}
+
+/* Style the "me" class within the left content */
+.me {
+  font-family: cursive;
+  font-size: 10px;
+  color: navy;
+}
+
+/* Style the right content in the section */
+.right {
+  flex: 1;
+}
+
+.right img {
+  max-width: 100%; /* Ensure the image fits within the container */
+  height: auto;
+}
+/* Navigation Bar Animation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: yellow;
+  animation: fadeInDown 1s ease forwards; /* Fade in from the top */
+}
+
+@keyframes fadeInDown {
+  0% {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Heading Animation */
+h2 {
+  color: black;
+  animation: slideInRight 1s ease forwards; /* Slide in from the right */
+}
+
+@keyframes slideInRight {
+  0% {
+      transform: translateX(100px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Home Section Animation */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color:yellow;
+  animation: fadeIn 1s ease forwards; /* Fade in */
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Left Content in Home Section Animation */
+.left {
+  flex: 1;
+  padding: 20px;
+  animation: slideInLeft 1s ease forwards; /* Slide in from the left */
+}
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Image in Home Section Animation */
+.right img {
+  max-width: 100%;
+  height: auto;
+  animation: zoomIn 1s ease forwards; /* Zoom in */
+}
+
+@keyframes zoomIn {
+  0% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}           
+
+.home_img{
+ border-radius: 50% solid 4px orange;
+}
+
+
+.about {
+  background-color:yellow; 
+  padding: 40px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-content {
+  flex: 1;
+}
+
+h1 {
+  color: navy;
+  font-size: 50px;
+  text-align: center;
+}
+
+
+p {
+  color: yellow;
+  font-size: 22px;
+  text-align: center;
+}
+
+h5{
+  font-size: 30px;
+  color: blue;
+  text-align: center;
+}
+
+.skills {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+
+}
+.skillname {
+  font-size: 18px;
+  font-weight: 700;
+  color: blue;
+  text-transform: uppercase;
+  margin: 20px 0;
+
+}
+.skillbar {
+  height: 14px;
+  background: ivory;
+  border-radius: 3px;
+}
+.skillper {
+  height: 14px;
+  background: blue;
+  border: 3px;
+  position: relative;
+  animation: fillbars 2.5s 1;
+}
+.skillper ::before {
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background: #f1f1f1;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+.skillper ::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f1f1f1;
+  top: -20px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+@keyframes fillbars {
+  from {
+      width: 0;
+  }
+  
+  to { width: 100%
+
+  }
+}
+#sikkl{
+  text-align: center;
+  color: navy;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.contact{
+  width: 400px;
+  margin: auto;
+  background-color: #363F91;
+  padding: 22px;
+  text-align: center;
+
+}
+.contact input{
+  width: 90%;
+  font-size: 18px;
+  padding: 11px;
+  margin-top: 11px;
+  height: 13px;
+}
+#msg{
+  width: 90%;
+  margin-top: 12px;
+  padding: 11px;
+  font-size: 18px;
+}
+.contact button{
+  width: 100px;
+  height: 36px;
+  border: none;
+  background-color: navy;
+  margin-top: 22px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.icons{
+  text-align: center;
+  font-size: 42px;
+  cursor: pointer;
+}
+.footer{
+  padding: 33px;
+  margin-top: 22px;
+  background-color: #363F91;                    
+}
+.text p{
+  text-align: center;
+  cursor: pointer;
+  margin-top: 22px;
+}
+#bar{
+  display: none;
+  font-size: 26px;
+}
+
+@media screen and (max-width:1100px){
+  .main{
+      display: block;
+      text-align: center;
+  }
+}
+
+@media screen and (max-width:660px){
+  .mainText h1{
+      font-size: 33px;
+  }
+  .main img{
+      width: 90%;
+  }
+  .mainText p{
+      font-size: 14px;
+  }
+  .serviceCard{
+      width: 70%;
+  }
+  .workCard img{
+      width: 80%;
+  }
+  .contact{
+      width: 80%;
+  }
+  ul{
+      display: none;
+  }
+  #bar{
+      display: block;
+  }
+
+}
+
+@media screen and (max-width:410px){
+    .about{
+      text-align: center;
+  }
+  .about img{
+      width: 90%;
+      height: 250px;
+  }
+}
+#work{
+  color:#363F91;
+  font-size: 40px;
+}
